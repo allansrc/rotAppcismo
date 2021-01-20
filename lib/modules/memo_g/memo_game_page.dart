@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:rotappcismo/data/data.dart';
 
+import '../../data/data.dart';
+import '../../data/data.dart';
+import '../../data/data.dart';
+import '../../data/data.dart';
+
 class MemogamePage extends StatefulWidget {
   @override
   _MemogamePageState createState() => _MemogamePageState();
@@ -10,9 +15,14 @@ class _MemogamePageState extends State<MemogamePage> {
   @override
   void initState() {
     super.initState();
+    initStateComplement();
+  }
+
+  void initStateComplement() {
     pairs = getPairs();
     pairs.shuffle();
-
+    points = 0;
+    cardOpened = 0;
     visiblePairs = pairs;
     cardSelected = true;
     Future.delayed(Duration(seconds: 4), () {
@@ -31,13 +41,33 @@ class _MemogamePageState extends State<MemogamePage> {
         title: Text('Jogo da Memória'),
         centerTitle: true,
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        padding: EdgeInsets.all(4.5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FloatingActionButton.extended(
+              heroTag: 'points',
+              onPressed: () {},
+              label: Text('$points'),
+            ),
+            if (cardOpened >= 12)
+              FloatingActionButton.extended(
+                heroTag: 'nextLevel',
+                onPressed: () {
+                  initStateComplement();
+                  setState(() {});
+                },
+                label: Text('Próx. Nível >'),
+              ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
             children: [
-              Text(points.toString()),
-              Text('Pontos'),
-              SizedBox(height: 20),
               GridView(
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -47,7 +77,6 @@ class _MemogamePageState extends State<MemogamePage> {
                   children: List.generate(visiblePairs.length, (index) {
                     return Tile(
                       imagePath: visiblePairs[index].getImagePath,
-                      // selected: visiblePairs[index].getIsSelected,
                       pairIndex: index,
                       parent: this,
                     );
@@ -82,6 +111,7 @@ class _TileState extends State<Tile> {
               Future.delayed(Duration(milliseconds: 850), () {
                 cardSelected = false;
                 points += 100;
+                cardOpened += 1;
                 selectedImagePath = '';
                 setState(() {});
                 widget.parent.setState(() {

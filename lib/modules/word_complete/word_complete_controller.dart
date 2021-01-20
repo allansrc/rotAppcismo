@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class WordCompleteController {
+class WordCompleteController extends GetxController {
   var points = 0.obs;
 
   void verifyPoints() {

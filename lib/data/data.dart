@@ -1,6 +1,7 @@
 import 'package:rotappcismo/model/tile_model.dart';
 
 int points = 0;
+int cardOpened = 0;
 int selectedTileIndex;
 String selectedImagePath = "";
 bool cardSelected = false;
