@@ -42,6 +42,7 @@ class WordCompletePage extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             itemCount: controller.listWordsToCompleteLVL1['images'].length,
             itemBuilder: (context, index) {
+              final imageByIndex = listWordsToComplete["images"][index];
               final controllerName = 'textController${index + 1}';
               return Padding(
                 padding: EdgeInsets.all(8),
@@ -50,7 +51,7 @@ class WordCompletePage extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         maxRadius: 48,
                         child: Image.asset(
-                          'assets/word_complete/${listWordsToComplete["images"][index]}',
+                          'assets/word_complete/$imageByIndex',
                           fit: BoxFit.fitHeight,
                         )),
                     title: Column(

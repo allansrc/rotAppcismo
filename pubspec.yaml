@@ -27,6 +27,8 @@ flutter:
 
   assets:
     - assets/memo_g/
+    - assets/word_complete/
+    - assets/rotacism/
 
   # fonts:
   #   - family: Schyler

@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
                     'Jogo da Memória',
                     style: TextStyle(color: Colors.white),
                   ))),
+          SizedBox(height: 10),
           Container(
               width: MediaQuery.of(context).size.width * .8,
               child: RaisedButton(
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
                     'Complete a Palavra',
                     style: TextStyle(color: Colors.white),
                   ))),
+          SizedBox(height: 10),
           Container(
               width: MediaQuery.of(context).size.width * .8,
               child: RaisedButton(
