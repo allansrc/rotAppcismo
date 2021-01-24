@@ -78,6 +78,7 @@ class _MemogamePageState extends State<MemogamePage> {
                     return Tile(
                       imagePath: visiblePairs[index].getImagePath,
                       pairIndex: index,
+                      isNamed: pairs[index].isNamed,
                       parent: this,
                     );
                   })),
@@ -90,10 +91,11 @@ class _MemogamePageState extends State<MemogamePage> {
 }
 
 class Tile extends StatefulWidget {
+  final bool isNamed;
   final int pairIndex;
   final String imagePath;
   final _MemogamePageState parent;
-  Tile({this.imagePath, this.parent, this.pairIndex});
+  Tile({this.imagePath, this.parent, this.pairIndex, this.isNamed});
   @override
   _TileState createState() => _TileState();
 }
@@ -144,11 +146,18 @@ class _TileState extends State<Tile> {
       },
       child: Container(
         margin: EdgeInsets.all(4.5),
-        child: pairs[widget.pairIndex].getImagePath == ''
+        child: (pairs[widget.pairIndex].getImagePath == '')
             ? Image.asset('assets/memo_g/check.png')
-            : Image.asset(
-                pairs[widget.pairIndex].getIsSelected ? pairs[widget.pairIndex].getImagePath : widget.imagePath,
-              ),
+            : (pairs[widget.pairIndex].getIsSelected && widget.isNamed)
+                ? Center(
+                    child: Text('${pairs[widget.pairIndex].getName}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.green[400],
+                          fontSize: 18,
+                        )))
+                : Image.asset(
+                    (pairs[widget.pairIndex].getIsSelected) ? pairs[widget.pairIndex].getImagePath : widget.imagePath),
       ),
     );
   }
