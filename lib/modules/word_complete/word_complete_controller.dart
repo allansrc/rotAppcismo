@@ -1,6 +1,20 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class WordCompleteController extends GetxController {
+  getTip(BuildContext context) async {
+    await Future.delayed(Duration(seconds: 1));
+    AwesomeDialog(
+      context: context,
+      dialogType: DialogType.INFO,
+      animType: AnimType.BOTTOMSLIDE,
+      title: 'Instruções',
+      desc: 'Complete a palavra do exemplo com a palavra completa! 😊',
+      btnOkOnPress: () {},
+    )..show();
+  }
+
   var points = 0.obs;
 
   void verifyPoints() {

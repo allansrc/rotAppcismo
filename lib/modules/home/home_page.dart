@@ -16,37 +16,42 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(centerTitle: true, title: Text(widget.title ?? '')),
-        body: Center(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-          Container(
-              width: MediaQuery.of(context).size.width * .8,
-              child: RaisedButton(
-                  onPressed: () => {Get.toNamed(AppRoutes.memog)},
-                  color: Colors.green.withOpacity(.9),
-                  child: Text(
-                    'Jogo da Memória',
-                    style: TextStyle(color: Colors.white),
-                  ))),
-          SizedBox(height: 10),
-          Container(
-              width: MediaQuery.of(context).size.width * .8,
-              child: RaisedButton(
-                  onPressed: () => {Get.toNamed(AppRoutes.wordcomp)},
-                  color: Colors.green.withOpacity(.9),
-                  child: Text(
-                    'Complete a Palavra',
-                    style: TextStyle(color: Colors.white),
-                  ))),
-          SizedBox(height: 10),
-          Container(
-              width: MediaQuery.of(context).size.width * .8,
-              child: RaisedButton(
-                  onPressed: () {},
-                  color: Colors.green.withOpacity(.9),
-                  child: Text(
-                    'Palavras Cruzadas',
-                    style: TextStyle(color: Colors.white),
-                  ))),
-        ])));
+        body: GestureDetector(
+          onTap: () {
+            WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
+          },
+          child: Center(
+              child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * .8,
+                child: RaisedButton(
+                    onPressed: () => {Get.toNamed(AppRoutes.memog)},
+                    color: Colors.green.withOpacity(.9),
+                    child: Text(
+                      'Jogo da Memória',
+                      style: TextStyle(color: Colors.white),
+                    ))),
+            SizedBox(height: 10),
+            Container(
+                width: MediaQuery.of(context).size.width * .8,
+                child: RaisedButton(
+                    onPressed: () => {Get.toNamed(AppRoutes.wordcomp)},
+                    color: Colors.green.withOpacity(.9),
+                    child: Text(
+                      'Complete a Palavra',
+                      style: TextStyle(color: Colors.white),
+                    ))),
+            SizedBox(height: 10),
+            Container(
+                width: MediaQuery.of(context).size.width * .8,
+                child: RaisedButton(
+                    onPressed: () {},
+                    color: Colors.green.withOpacity(.9),
+                    child: Text(
+                      'Palavras Cruzadas',
+                      style: TextStyle(color: Colors.white),
+                    ))),
+          ])),
+        ));
   }
 }
