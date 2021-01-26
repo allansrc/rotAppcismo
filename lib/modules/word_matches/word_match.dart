@@ -67,7 +67,7 @@ class _WordMatchPageState extends State<WordMatchPage> {
                                   isLeftCorrect.first
                                       ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
                                       : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
-                                  style: TextStyle(color: Colors.black, fontSize: 24),
+                                  style: TextStyle(color: Colors.white, fontSize: 24),
                                 )),
                             onPressed: () {
                               _answerCurrentQuestion(isLeftCorrect.first
@@ -82,7 +82,7 @@ class _WordMatchPageState extends State<WordMatchPage> {
                                   !isLeftCorrect.first
                                       ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
                                       : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
-                                  style: TextStyle(color: Colors.black, fontSize: 24),
+                                  style: TextStyle(color: Colors.white, fontSize: 24),
                                 )),
                             onPressed: () {
                               _answerCurrentQuestion(!isLeftCorrect.first
@@ -126,7 +126,19 @@ class _WordMatchPageState extends State<WordMatchPage> {
     }
   }
 
-  void _showResult(int correctAnswers) {
-    Get.snackbar('Respostas corretas', '$correctAnswers');
+  void _showResult(int correctAnswers) async {
+    Get.snackbar(
+      'Ops...',
+      'Resposta incorreta',
+      snackPosition: SnackPosition.BOTTOM,
+      duration: Duration(milliseconds: 1200),
+    );
+    await Future.delayed(Duration(seconds: 2));
+    Get.snackbar(
+      'Respostas corretas: $correctAnswers',
+      '',
+      snackPosition: SnackPosition.BOTTOM,
+      duration: Duration(milliseconds: 1200),
+    );
   }
 }
