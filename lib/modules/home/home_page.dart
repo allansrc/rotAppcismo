@@ -45,10 +45,10 @@ class _HomePageState extends State<HomePage> {
             Container(
                 width: MediaQuery.of(context).size.width * .8,
                 child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () => {Get.toNamed(AppRoutes.wordmatch)},
                     color: Colors.green.withOpacity(.9),
                     child: Text(
-                      'Palavras Cruzadas',
+                      'O que é O que é ?',
                       style: TextStyle(color: Colors.white),
                     ))),
           ])),
