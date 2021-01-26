@@ -11,176 +11,173 @@ List<TileModel> visiblePairs = [];
 
 List<TileModel> getPairs() {
   List<TileModel> pairs = [];
-  TileModel tileModel = new TileModel();
-
   // 1
-  tileModel.setImagePath('assets/memo_g/açaí.jpeg');
+  TileModel tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/afluente.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('açaí');
+  tileModel.setName('afluente');
   pairs.add(tileModel);
-
   tileModel = new TileModel();
-
-  tileModel.setImagePath('assets/memo_g/açaí.jpeg');
+  tileModel.setImagePath('assets/memo_g/afluente.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('açaí');
+  tileModel.setName('afluente');
   pairs.add(tileModel);
 
-  tileModel = new TileModel();
   // 2
-  tileModel.setImagePath('assets/memo_g/afluente.jpeg');
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/atlas.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('afluente');
+  tileModel.setName('atlas');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/afluente.jpeg');
+  tileModel.setImagePath('assets/memo_g/atlas.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('afluente');
+  tileModel.setName('atlas');
   pairs.add(tileModel);
 
   // 3
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/atlas.jpeg');
+  tileModel.setImagePath('assets/memo_g/bíblia.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('atlas');
+  tileModel.setName('bíblia');
   pairs.add(tileModel);
-
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/atlas.jpeg');
+  tileModel.setImagePath('assets/memo_g/bíblia.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('atlas');
+  tileModel.setName('bíblia');
   pairs.add(tileModel);
 
   // 4
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/banco.jpeg');
+  tileModel.setImagePath('assets/memo_g/bicicleta.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('banco');
+  tileModel.setName('bicicleta');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/banco.jpeg');
+  tileModel.setImagePath('assets/memo_g/bicicleta.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('banco');
+  tileModel.setName('bicicleta');
   pairs.add(tileModel);
 
-  tileModel = new TileModel();
-  // 5
-  tileModel.setImagePath('assets/memo_g/barco.jpeg');
-  tileModel.setIsSelected(false);
-  tileModel.setIsNamed(false);
-  tileModel.setName('barco');
-  pairs.add(tileModel);
-  tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/barco.jpeg');
-  tileModel.setIsSelected(false);
-  tileModel.setIsNamed(true);
-  tileModel.setName('barco');
-  pairs.add(tileModel);
-
-  tileModel = new TileModel();
-  // 6
-  tileModel.setImagePath('assets/memo_g/batatas.jpeg');
-  tileModel.setIsSelected(false);
-  tileModel.setIsNamed(false);
-  tileModel.setName('batatas');
-  pairs.add(tileModel);
-  tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/batatas.jpeg');
-  tileModel.setIsSelected(false);
-  tileModel.setIsNamed(true);
-  tileModel.setName('batatas');
-  pairs.add(tileModel);
-
-  tileModel = new TileModel();
-  // 7
-  tileModel.setImagePath('assets/memo_g/bíblia.jpeg');
-  tileModel.setIsSelected(false);
-  tileModel.setIsNamed(false);
-  tileModel.setName('bíblia');
-  pairs.add(tileModel);
-  tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/bíblia.jpeg');
-  tileModel.setIsSelected(false);
-  tileModel.setIsNamed(true);
-  tileModel.setName('bíblia');
-  pairs.add(tileModel);
-
-  tileModel = new TileModel();
   // 8
-  tileModel.setImagePath('assets/memo_g/bicicleta.jpeg');
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/chicletes.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('bicicleta');
+  tileModel.setName('chicletes');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/bicicleta.jpeg');
+  tileModel.setImagePath('assets/memo_g/chicletes.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('bicicleta');
+  tileModel.setName('chicletes');
   pairs.add(tileModel);
 
+  // 7
   tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/ciclistas.jpeg');
+  tileModel.setIsSelected(false);
+  tileModel.setIsNamed(false);
+  tileModel.setName('ciclistas');
+  pairs.add(tileModel);
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/ciclistas.jpeg');
+  tileModel.setIsSelected(false);
+  tileModel.setIsNamed(true);
+  tileModel.setName('ciclistas');
+  pairs.add(tileModel);
+
+  // 12
+  ///////
   // 9
-  tileModel.setImagePath('assets/memo_g/biscoitos.jpeg');
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/ciclo.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('biscoitos');
+  tileModel.setName('ciclo');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/biscoitos.jpeg');
+  tileModel.setImagePath('assets/memo_g/ciclo.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('biscoitos');
+  tileModel.setName('ciclo');
   pairs.add(tileModel);
 
-  tileModel = new TileModel();
   // 10
-  tileModel.setImagePath('assets/memo_g/boneca.jpeg');
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/clara.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
   tileModel.setName('afluente');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/boneca.jpeg');
+  tileModel.setImagePath('assets/memo_g/clara.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('boneca');
+  tileModel.setName('clara');
   pairs.add(tileModel);
 
   tileModel = new TileModel();
   // 11
-  tileModel.setImagePath('assets/memo_g/carro.jpeg');
+  tileModel.setImagePath('assets/memo_g/clava.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('carro');
+  tileModel.setName('clava');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/carro.jpeg');
+  tileModel.setImagePath('assets/memo_g/clava.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('carro');
+  tileModel.setName('clava');
   pairs.add(tileModel);
 
   tileModel = new TileModel();
-  // 12
-  tileModel.setImagePath('assets/memo_g/casa.jpeg');
+  tileModel.setImagePath('assets/memo_g/conflito.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('casa');
+  tileModel.setName('conflito');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/casa.jpeg');
+  tileModel.setImagePath('assets/memo_g/conflito.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('casa');
+  tileModel.setName('conflito');
+  pairs.add(tileModel);
+
+  // 5
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/criança.jpeg');
+  tileModel.setIsSelected(false);
+  tileModel.setIsNamed(false);
+  tileModel.setName('criança');
+  pairs.add(tileModel);
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/criança.jpeg');
+  tileModel.setIsSelected(false);
+  tileModel.setIsNamed(true);
+  tileModel.setName('criança');
+  pairs.add(tileModel);
+
+  // 6
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/diploma.jpeg');
+  tileModel.setIsSelected(false);
+  tileModel.setIsNamed(false);
+  tileModel.setName('diploma');
+  pairs.add(tileModel);
+  tileModel = new TileModel();
+  tileModel.setImagePath('assets/memo_g/diploma.jpeg');
+  tileModel.setIsSelected(false);
+  tileModel.setIsNamed(true);
+  tileModel.setName('diploma');
   pairs.add(tileModel);
 
   return pairs;
