@@ -154,16 +154,16 @@ List<TileModel> getPairs() {
 
   // 5
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/criança.jpeg');
+  tileModel.setImagePath('assets/memo_g/explosão.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(false);
-  tileModel.setName('criança');
+  tileModel.setName('explosão');
   pairs.add(tileModel);
   tileModel = new TileModel();
-  tileModel.setImagePath('assets/memo_g/criança.jpeg');
+  tileModel.setImagePath('assets/memo_g/explosão.jpeg');
   tileModel.setIsSelected(false);
   tileModel.setIsNamed(true);
-  tileModel.setName('criança');
+  tileModel.setName('explosão');
   pairs.add(tileModel);
 
   // 6
