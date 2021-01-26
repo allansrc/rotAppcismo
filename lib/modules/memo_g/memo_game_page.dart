@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:rotappcismo/data/data.dart';
 
 import '../../data/data.dart';
-import '../../data/data.dart';
-import '../../data/data.dart';
-import '../../data/data.dart';
 
 class MemogamePage extends StatefulWidget {
   @override

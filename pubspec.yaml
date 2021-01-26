@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.1
 
   get:
+  get_storage:
   awesome_dialog:
 
 dev_dependencies:

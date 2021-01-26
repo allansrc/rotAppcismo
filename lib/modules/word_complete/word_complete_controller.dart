@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 
 class WordCompleteController extends GetxController {
   getTip(BuildContext context) async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(milliseconds: 500));
     AwesomeDialog(
       context: context,
       dialogType: DialogType.INFO,
       animType: AnimType.BOTTOMSLIDE,
       title: 'Instruções',
-      desc: 'Complete a palavra do exemplo com a palavra completa! 😊',
+      desc: 'Escreva a palavra completa do exemplo com a sílaba que falta! 😊',
       btnOkOnPress: () {},
     )..show();
   }
