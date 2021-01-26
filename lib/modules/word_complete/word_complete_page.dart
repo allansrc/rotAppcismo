@@ -7,7 +7,7 @@ import 'word_complete_controller.dart';
 class WordCompletePage extends StatelessWidget {
   final controller = Get.put(WordCompleteController());
 
-  final List<TextEditingController> listTextCTRL = List.generate(4, (i) => TextEditingController());
+  final List<TextEditingController> listTextCTRL = List.generate(11, (i) => TextEditingController());
 
   final Rx<GlobalKey<FormState>> formKey = GlobalKey<FormState>().obs;
 
@@ -17,7 +17,7 @@ class WordCompletePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Complete a Palavra!')),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      body: SingleChildScrollView(child: Column(children: [_listTile(), SizedBox(height: 16)])),
+      body: SingleChildScrollView(child: Column(children: [_listTile(), SizedBox(height: 64)])),
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -49,7 +49,7 @@ class WordCompletePage extends StatelessWidget {
   }
 
   Widget _listTile() {
-    final listWordsToComplete = controller.listWordsToCompleteLVL1;
+    final listWordsToComplete = controller.listWordsToCompleteLVL2;
     return GestureDetector(
       child: Container(
           child: Form(
@@ -57,7 +57,7 @@ class WordCompletePage extends StatelessWidget {
               child: ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: controller.listWordsToCompleteLVL1['images'].length,
+                  itemCount: controller.listWordsToCompleteLVL2['images'].length,
                   itemBuilder: (context, index) {
                     final imageByIndex = listWordsToComplete["images"][index];
                     final nameByIndex = imageByIndex.toString().split('.').first;

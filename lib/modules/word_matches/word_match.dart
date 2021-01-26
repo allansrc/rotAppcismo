@@ -25,28 +25,30 @@ class _WordMatchPageState extends State<WordMatchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('CruzePalavras')),
-      body: Container(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 96, horizontal: 16),
+      appBar: AppBar(title: Text('O que é O que é?')),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
                 widget._questions.elementAt(_currentQuestionIndex).question.question,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 28, color: Colors.green[400]),
+                style: TextStyle(fontSize: 20, color: Colors.green[400]),
               ),
-              Expanded(
-                flex: 1,
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: AnimatedOpacity(
-                    opacity: _correctTextVisible ? 1 : 0,
-                    duration: Duration(milliseconds: 400),
-                    child: Text(
-                      "CORRETO!",
-                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Center(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: AnimatedOpacity(
+                      opacity: _correctTextVisible ? 1 : 0,
+                      duration: Duration(milliseconds: 400),
+                      child: Text(
+                        "CORRETO!",
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
                   ),
                 ),
