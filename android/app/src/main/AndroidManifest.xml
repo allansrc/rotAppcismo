@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rotappcismo">
    <application
-        android:label="rotappcismo"
+        android:label="rotAppcismo"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

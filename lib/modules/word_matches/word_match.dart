@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:rotappcismo/data/questions.dart';
 import 'package:rotappcismo/modules/word_matches/word_match_controller.dart';
 import 'package:rotappcismo/themes/theme.dart';
@@ -11,7 +12,6 @@ class WordMatchPage extends StatefulWidget {
 }
 
 class _WordMatchPageState extends State<WordMatchPage> {
-  final controller = WordMatchController();
   final List<bool> isLeftCorrect = [true, false];
 
   int _currentQuestionIndex = 0;
@@ -54,45 +54,43 @@ class _WordMatchPageState extends State<WordMatchPage> {
                 ),
               ),
               Center(
-                child: Expanded(
-                  child: Align(
-                    alignment: FractionalOffset.bottomCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      // alignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        RaisedButton(
-                            color: AppColors.mainColor,
-                            child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  isLeftCorrect.first
-                                      ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
-                                      : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
-                                  style: TextStyle(color: Colors.white, fontSize: 24),
-                                )),
-                            onPressed: () {
-                              _answerCurrentQuestion(isLeftCorrect.first
-                                  ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
-                                  : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer);
-                            }),
-                        RaisedButton(
-                            color: AppColors.mainColor,
-                            child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  !isLeftCorrect.first
-                                      ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
-                                      : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
-                                  style: TextStyle(color: Colors.white, fontSize: 24),
-                                )),
-                            onPressed: () {
-                              _answerCurrentQuestion(!isLeftCorrect.first
-                                  ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
-                                  : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer);
-                            }),
-                      ],
-                    ),
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // alignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      RaisedButton(
+                          color: AppColors.mainColor,
+                          child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                isLeftCorrect.first
+                                    ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
+                                    : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
+                                style: TextStyle(color: Colors.white, fontSize: 24),
+                              )),
+                          onPressed: () {
+                            _answerCurrentQuestion(isLeftCorrect.first
+                                ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
+                                : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer);
+                          }),
+                      RaisedButton(
+                          color: AppColors.mainColor,
+                          child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                !isLeftCorrect.first
+                                    ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
+                                    : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
+                                style: TextStyle(color: Colors.white, fontSize: 24),
+                              )),
+                          onPressed: () {
+                            _answerCurrentQuestion(!isLeftCorrect.first
+                                ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
+                                : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer);
+                          }),
+                    ],
                   ),
                 ),
               )
@@ -109,7 +107,7 @@ class _WordMatchPageState extends State<WordMatchPage> {
         _correctTextVisible = true;
         isLeftCorrect.shuffle();
       });
-      controller.updateBestScoreIfNecessary(_currentQuestionIndex + 1);
+      updateBestScoreIfNecessary(_currentQuestionIndex + 1);
       if (_currentQuestionIndex + 1 == widget._questions.length) {
         _showResult(_currentQuestionIndex + 1);
       } else {
@@ -142,5 +140,13 @@ class _WordMatchPageState extends State<WordMatchPage> {
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(milliseconds: 1200),
     );
+  }
+
+  final storage = GetStorage();
+  void updateBestScoreIfNecessary(int correctAnswers) async {
+    String bestScore = storage.read("score");
+
+    if (bestScore.isEmpty || bestScore == null) bestScore = 0.toString();
+    if (int.parse(bestScore) < correctAnswers) storage.write("score", correctAnswers);
   }
 }

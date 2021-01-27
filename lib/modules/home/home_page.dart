@@ -51,6 +51,16 @@ class _HomePageState extends State<HomePage> {
                       'O que é O que é ?',
                       style: TextStyle(color: Colors.white),
                     ))),
+            SizedBox(height: 10),
+            Container(
+                width: MediaQuery.of(context).size.width * .8,
+                child: RaisedButton(
+                    onPressed: () => {},
+                    color: Colors.green.withOpacity(.9),
+                    child: Text(
+                      'Palavras Cruzadas',
+                      style: TextStyle(color: Colors.white),
+                    ))),
           ])),
         ));
   }
