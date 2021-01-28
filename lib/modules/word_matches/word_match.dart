@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -105,16 +106,26 @@ class _WordMatchPageState extends State<WordMatchPage> {
     if (widget._questions.elementAt(_currentQuestionIndex).answer(answer)) {
       setState(() {
         _correctTextVisible = true;
-        isLeftCorrect.shuffle();
       });
       updateBestScoreIfNecessary(_currentQuestionIndex + 1);
       if (_currentQuestionIndex + 1 == widget._questions.length) {
-        _showResult(_currentQuestionIndex + 1);
+        AwesomeDialog(
+          context: context,
+          dialogType: DialogType.SUCCES,
+          animType: AnimType.SCALE,
+          title: 'OK!',
+          desc: 'Muito bem! você fez $_currentQuestionIndex pontos!',
+          btnOkText: 'entendi',
+          btnOkOnPress: () {
+            Get.back();
+          },
+        )..show();
       } else {
         await Future.delayed(Duration(milliseconds: 800));
         _currentQuestionIndex++;
         setState(() {
           _correctTextVisible = false;
+          isLeftCorrect.shuffle();
         });
       }
     } else {
