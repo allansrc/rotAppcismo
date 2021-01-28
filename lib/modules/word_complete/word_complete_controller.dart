@@ -3,7 +3,14 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class WordCompleteController extends GetxController {
+  List<TextEditingController> listTextCTRL;
+  Map<String, dynamic> listWordsToCompleteByLVL;
+
+  final currentLVL = 1.obs;
+  final currentLength = 0.obs;
+
   getTip(BuildContext context) async {
+    startLVL();
     await Future.delayed(Duration(milliseconds: 500));
     AwesomeDialog(
       context: context,
@@ -13,6 +20,25 @@ class WordCompleteController extends GetxController {
       desc: 'Escreva a palavra completa do exemplo com a sílaba que falta! 😊',
       btnOkOnPress: () {},
     )..show();
+  }
+
+  startLVL() {
+    if (currentLVL.value == 1) {
+      // listTextCTRL.clear();
+      listWordsToCompleteByLVL = listWordsToCompleteLVL1;
+      currentLength.value = listWordsToCompleteLVL1['images']?.length;
+      listTextCTRL = List.generate(listWordsToCompleteLVL1['images']?.length, (i) => TextEditingController());
+    } else if (currentLVL.value == 2) {
+      // listTextCTRL.clear();
+      listWordsToCompleteByLVL = listWordsToCompleteLVL2;
+      currentLength.value = listWordsToCompleteLVL2['images'].length;
+      listTextCTRL = List.generate(listWordsToCompleteLVL2['images']?.length, (i) => TextEditingController());
+    } else {
+      // listTextCTRL.clear();
+      listWordsToCompleteByLVL = listWordsToCompleteLVL3;
+      currentLength.value = listWordsToCompleteLVL3['images']?.length;
+      listTextCTRL = List.generate(listWordsToCompleteLVL3['images']?.length, (i) => TextEditingController());
+    }
   }
 
   var points = 0.obs;
