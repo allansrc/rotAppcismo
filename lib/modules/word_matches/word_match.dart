@@ -69,7 +69,7 @@ class _WordMatchPageState extends State<WordMatchPage> {
                                 isLeftCorrect.first
                                     ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
                                     : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
-                                style: TextStyle(color: Colors.white, fontSize: 24),
+                                style: TextStyle(color: Colors.white, fontSize: 18),
                               )),
                           onPressed: () {
                             _answerCurrentQuestion(isLeftCorrect.first
@@ -84,7 +84,7 @@ class _WordMatchPageState extends State<WordMatchPage> {
                                 !isLeftCorrect.first
                                     ? widget._questions.elementAt(_currentQuestionIndex).question.correctAnswer
                                     : widget._questions.elementAt(_currentQuestionIndex).question.wrongAnswer,
-                                style: TextStyle(color: Colors.white, fontSize: 24),
+                                style: TextStyle(color: Colors.white, fontSize: 18),
                               )),
                           onPressed: () {
                             _answerCurrentQuestion(!isLeftCorrect.first

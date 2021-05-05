@@ -18,6 +18,8 @@ dependencies:
   get_storage:
   awesome_dialog:
 
+  google_fonts:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

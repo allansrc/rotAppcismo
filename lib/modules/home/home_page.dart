@@ -15,7 +15,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(centerTitle: true, title: Text(widget.title ?? '')),
+        appBar: AppBar(
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          title: Text('rotAppcismo'),
+        ),
         body: GestureDetector(
           onTap: () {
             WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
