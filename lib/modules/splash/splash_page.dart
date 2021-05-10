@@ -9,6 +9,8 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  bool _visible = false;
+
   @override
   void initState() {
     onSplash();
@@ -16,62 +18,32 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   onSplash() async {
-    await Future.delayed(Duration(seconds: 4));
+    await Future.delayed(Duration(milliseconds: 400));
+    setState(() {
+      _visible = !_visible;
+    });
+    await Future.delayed(Duration(seconds: 3));
     Get.toNamed(AppRoutes.initial);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      // backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.white,
       body: GestureDetector(
         onTap: () => Get.toNamed(AppRoutes.initial),
         child: Center(
-          child: Column(
-            children: [
-              Spacer(),
-              Text(
-                'rotAppcismo',
-                style: GoogleFonts.architectsDaughter(
-                  fontSize: 32,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+          child: AnimatedOpacity(
+            opacity: _visible ? 1.0 : 0.0,
+            duration: Duration(milliseconds: 800),
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/splash.jpeg'),
                 ),
               ),
-              Spacer(),
-              Text(
-                'Equipe:',
-                style: GoogleFonts.ubuntu(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text(
-                  'TEIXEIRA, Allan; ',
-                  style: GoogleFonts.ubuntu(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  'VIEIRA, Alcione; ',
-                  style: GoogleFonts.ubuntu(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  'SILVA Jr, Leônidas ',
-                  style: GoogleFonts.ubuntu(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ]),
-              SizedBox(height: 8),
-            ],
+            ),
           ),
         ),
       ),
