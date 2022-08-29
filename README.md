@@ -32,3 +32,7 @@ Builds on Xcode don't need changes. To run it on macOS you may need enable sandb
 - Linux
 - Windows
 - Web
+
+# Links
+
+To license refs and Apk Download follow this [link](https://github.com/allansrc/rotAppcism)
